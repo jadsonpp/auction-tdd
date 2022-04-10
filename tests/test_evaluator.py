@@ -1,14 +1,18 @@
 
 from unittest import TestCase
 import unittest
-from auction.auction import Auction
-from auction.bid import Bid
-from auction.evaluator import Evaluator
+import sys
+sys.path.append("..")
 
-from auction.user import User
+from src.auction.auction import Auction
+from src.auction.bid import Bid
+from src.auction.evaluator import Evaluator
+
+from src.auction.user import User
 
 
 class TestEvaluator(TestCase):
+
     def test_evaluator(self):
         # Users
         john = User("John Lennon")
@@ -26,7 +30,6 @@ class TestEvaluator(TestCase):
         # Evaluator
         auction_evaluator = Evaluator()
         auction_evaluator.processing_auction(phone_auction)
-
 
         min_expected_value, max_expected_value = 70.00, 80.50
         self.assertEqual(min_expected_value, auction_evaluator.min_value)

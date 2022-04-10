@@ -1,6 +1,6 @@
 
 from dataclasses import dataclass
-from auction import Auction
+from .auction import Auction
 import sys
 
 @dataclass
